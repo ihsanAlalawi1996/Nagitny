@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/mainFragmentLayout"
+    android:background="@drawable/login"
+    >
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="414dp"
+        android:layout_marginRight="54dp"
+        android:src="@drawable/password_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginRight="54dp"
+        android:src="@drawable/phone_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="414dp"
+        android:layout_marginRight="54dp"
+        android:src="@drawable/password_icon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="331dp"
+        android:layout_marginRight="54dp"
+        android:src="@drawable/phone_icon" />
+
+    <EditText
+        android:id="@+id/loginuserField"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="79dp"
+        android:layout_marginLeft="79dp"
+        android:layout_marginTop="335dp"
+        android:background="@drawable/round_search"
+        android:ems="10"
+        android:hint="   Phone Number"
+        android:paddingLeft="@dimen/_10sdp"
+
+        android:inputType="textPersonName" />
+
+
+    <EditText
+        android:textColor="@color/black"
+        android:id="@+id/loginPassField"
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        android:layout_marginStart="79dp"
+        android:layout_marginLeft="79dp"
+        android:layout_marginTop="415dp"
+        android:background="@drawable/round_search"
+        android:hint="   Password"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="466dp"
+        android:text="forgot your password ?" />
+
+    <androidx.appcompat.widget.AppCompatButton
+
+        android:id="@+id/loginButt"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="114dp"
+        android:layout_marginTop="511dp"
+        android:background="@drawable/round"
+        android:fontFamily="sans-serif"
+        android:inputType="text"
+        android:onClick="logInClick"
+        android:text="Log in"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/_25sdp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/registerButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginButt"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="166dp"
+        android:layout_marginLeft="166dp"
+        android:layout_marginTop="1dp"
+        android:background="#00000000 "
+        android:fontFamily="sans-serif"
+        android:inputType="text"
+        android:onClick="registerClick"
+        android:text="Sign Up"
+        android:textColor="#F3EEEE"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/userSettings"
+        android:title="user Settings ">
+        <menu>
+            <item
+                android:id="@+id/account"
+                android:title="Account" />
+            <item
+                android:id="@+id/changePassword"
+                android:title="Change Passowrd" />
+            <item
+                android:id="@+id/history"
+                android:title="History" />
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/activities"
+        android:title="Activities">
+        <menu>
+
+            <item
+                android:id="@+id/deposit"
+                android:title="Deposit" />
+            <item
+                android:id="@+id/withdraw"
+                android:title="Withdraw" />
+            <item
+                android:id="@+id/transfare"
+                android:title="Transfare"
+                />
+            <item
+                android:id="@+id/loan"
+                android:title="loan"
+                />
+            <item
+                android:id="@+id/logOut"
+                android:title="Log Out"
+                />
+        </menu>
+    </item>
+
+</menu>

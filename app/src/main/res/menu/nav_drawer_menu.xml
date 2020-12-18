@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group
+        android:id="@+id/group1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/personal_information"
+            android:icon="@drawable/username_icon"
+            android:title="@string/info" />
+    </group>
+    <group
+        android:id="@+id/group5"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/history"
+            android:icon="@drawable/history_icon"
+            android:title="History Of Donations" />
+    </group>
+    <group
+        android:id="@+id/group6"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/credit_cards"
+            android:icon="@drawable/credit_card_icon"
+            android:title="Credit Cards" />
+    </group>
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/change_password"
+            android:icon="@drawable/password_icon"
+            android:title="@string/pass" />
+    </group>
+    <group
+        android:id="@+id/group3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/contact_us"
+            android:icon="@drawable/contact_icon"
+            android:title="@string/contact" />
+    </group>
+    <group
+        android:id="@+id/group4"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/log_out"
+            android:icon="@drawable/logout_icon"
+            android:title="Log Out" />
+    </group>
+
+
+
+
+</menu>
