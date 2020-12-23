@@ -5,14 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import com.example.data.bases.BaseViewModel
 import com.example.my_first_task.data.models.Items
 import com.example.project.data.models.Users
+import com.example.project.data.repositories.HomeRepository
 import com.example.project.data.repositories.SplashRepository
 import io.paperdb.Paper
 
 
 class HomeViewModel : BaseViewModel() {
 
-    val repository = SplashRepository()
-    val users = MutableLiveData<Users>()
+    val repository = HomeRepository()
+    val items = MutableLiveData<Items>()
 
 
     fun addItem(holderFragment:Int,desFragemnt: Fragment) {

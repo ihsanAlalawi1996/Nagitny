@@ -18,9 +18,5 @@ class SplashRepository {
 
         return users?.password != null
     }
-    fun addItemtoDB(model: Items){
 
-        DataBase.getDatabaseInstance(App.instance).BaseDao().intestIntoItems(model)
-
-    }
 }
