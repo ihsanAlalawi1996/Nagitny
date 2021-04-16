@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Users(
     @PrimaryKey
-    @ColumnInfo(name = "username")
+        @ColumnInfo(name = "username")
     @SerializedName("username")
     var username:String,
     @ColumnInfo(name = "password")

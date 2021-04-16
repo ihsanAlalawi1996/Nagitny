@@ -14,7 +14,7 @@ class SplashRepository {
     }
     fun checkInfo(phone:Int,pass:String):Boolean{
 
-        var users=DataBase.getDatabaseInstance(App.instance).BaseDao().getInfo(phone,pass)
+        var users=DataBase.getDatabaseInstance(App.instance).BaseDao().checkInfo(phone,pass)
 
         return users?.password != null
     }

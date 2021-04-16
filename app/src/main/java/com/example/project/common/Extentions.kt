@@ -3,6 +3,7 @@ package com.example.project.common
 import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
+import android.util.Log
 import android.view.inputmethod.InputMethodManager
 
 fun Context.isOnline(): Boolean {
@@ -21,4 +22,7 @@ fun Activity.hideKeyboard() {
     currentFocus?.let {
         inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
     }
+}
+fun Log(tag: String, msg: String) {
+    Log.d(tag, msg)
 }

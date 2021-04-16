@@ -20,11 +20,11 @@ class SplashScreen : AppCompatActivity() {
         viewModel= ViewModelProvider(this).get(SplashViewModel::class.java)
         instance=this
 
-        var phone = (Paper.book().read("mKey", 0))
-        if (phone!=null) {                                                     // checks if there was already a login  and logs in automatically
-                var intent =Intent(this,Home::class.java)
-                startActivity(intent)
-            }
+//        var phone = (Paper.book().read("mKey", 0))
+//        if (phone!=null) {                                                     // checks if there was already a login  and logs in automatically
+//                var intent =Intent(this,Home::class.java)
+//                startActivity(intent)
+//            }
 
 
         viewModel.switchFragemnt(R.id.splash_activity,LogInFragment())

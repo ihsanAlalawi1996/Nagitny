@@ -41,6 +41,7 @@
 
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/post_close_btn"
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:background="@drawable/close"
@@ -78,6 +79,7 @@
 
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/aclonica"
                 android:inputType="text"
                 android:text="Name of item :"
                 android:textColor="@color/black"
@@ -102,6 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="enter name here "
+                android:inputType="text"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_margin="@dimen/_3sdp"
@@ -116,6 +119,8 @@
                 android:layout_marginTop="16dp"
                 android:inputType="text"
                 android:text="Price :"
+                android:fontFamily="@font/aclonica"
+
                 android:textColor="@color/black"
                 android:textSize="@dimen/_17sdp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -151,6 +156,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="8dp"
                 android:inputType="text"
+                android:fontFamily="@font/aclonica"
                 android:text="Name and Address Of Store :"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_17sdp"
@@ -200,7 +206,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginLeft="32dp"
                 android:inputType="text"
-                android:text="Importatnt item"
+                android:text="higher priority "
                 android:textColor="@color/black"
                 android:textSize="@dimen/_17sdp"
                 app:layout_constraintBottom_toBottomOf="parent"

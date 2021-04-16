@@ -13,4 +13,17 @@ class HomeRepository {
         DataBase.getDatabaseInstance(App.instance).BaseDao().intestIntoItems(model)
 
     }
+    fun getProfileName(phone: Int):String?{
+
+        return DataBase.getDatabaseInstance(App.instance).BaseDao().getUserName(phone)
+
+    }
+
+    fun getPassword(phone: Int):String{
+
+        return DataBase.getDatabaseInstance(App.instance).BaseDao().getPassword(phone)
+
+    }
+
+
 }

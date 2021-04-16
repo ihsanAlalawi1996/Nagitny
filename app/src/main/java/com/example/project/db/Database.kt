@@ -8,7 +8,7 @@ import com.example.my_first_task.data.models.Items
 import com.example.project.dao.BaseDao
 
 
-@Database(entities = [Users::class,Items::class],version= 4)
+@Database(entities = [Users::class,Items::class,History::class,Cards::class],version= 2)
 
 abstract class DataBase: RoomDatabase() {
 
