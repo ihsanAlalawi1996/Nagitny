@@ -1,4 +1,4 @@
-package com.example.project.ui.Home
+package com.example.project.ui.Home.Fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,11 @@ import androidx.fragment.app.Fragment
 import com.example.project.R
 import com.example.project.common.App
 import com.example.project.common.Log
+import com.example.project.ui.Home.Home
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.add_item_view.view.*
 
-class AddItemFragemnt : Fragment() {
+class   AddItemFragemnt : Fragment() {
 
     companion object {
         lateinit var aView: View
@@ -39,8 +40,9 @@ class AddItemFragemnt : Fragment() {
                     impo
                 )
                 activity?.onBackPressed()
-                Snackbar.make(aView,"Item Added ", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(aView,"Item Added Successfully", Snackbar.LENGTH_LONG).show()
 
+                Home.viewModel.setupAdapter(App.phone)
             }
 
 

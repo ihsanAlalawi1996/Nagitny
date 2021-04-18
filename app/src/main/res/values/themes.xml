@@ -12,4 +12,7 @@
     <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
         <item name="android:background">@drawable/round</item>
     </style>
+<!--    <style name="seethrough">-->
+<!--        <item name="background">@drawable/seethrough</item>-->
+<!--    </style>-->
 </resources>

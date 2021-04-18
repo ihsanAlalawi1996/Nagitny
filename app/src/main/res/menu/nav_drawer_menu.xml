@@ -26,14 +26,7 @@
             android:icon="@drawable/credit_card_icon"
             android:title="Credit Cards" />
     </group>
-    <group
-        android:id="@+id/group2"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/change_password"
-            android:icon="@drawable/password_icon"
-            android:title="@string/pass" />
-    </group>
+
     <group
         android:id="@+id/group3"
         android:checkableBehavior="single">

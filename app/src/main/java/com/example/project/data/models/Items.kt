@@ -1,11 +1,12 @@
-package com.example.my_first_task.data.models
+package com.example.project.data.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
-@Entity(tableName = "ItemTable")
+@Entity(tableName = "ItemsTable")
 
 data class Items (
     @PrimaryKey(autoGenerate = true)
@@ -35,4 +36,8 @@ data class Items (
     var status:String,
     @ColumnInfo(name = "percentage")
     @SerializedName("percentage")
-    var percentage:Double)
+    var percentage:Double,
+    @ColumnInfo(name = "date")
+    @SerializedName("date")
+    var date: String
+    )

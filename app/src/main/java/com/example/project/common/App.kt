@@ -12,6 +12,7 @@ class App : Application() {
     }
 
     companion object {
+        var phone=1
         lateinit var instance: App
             private set
     }

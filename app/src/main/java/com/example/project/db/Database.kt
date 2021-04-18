@@ -4,11 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.my_first_task.data.models.Items
 import com.example.project.dao.BaseDao
 
 
-@Database(entities = [Users::class,Items::class,History::class,Cards::class],version= 2)
+@Database(entities = [Users::class,Items::class,History::class,Cards::class],version= 1)
 
 abstract class DataBase: RoomDatabase() {
 

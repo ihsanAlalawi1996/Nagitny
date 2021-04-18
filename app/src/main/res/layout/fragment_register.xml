@@ -132,6 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_60sdp"
         android:layout_marginTop="@dimen/_260sdp"
+        app:passwordToggleEnabled="true"
         >
 
         <EditText

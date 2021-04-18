@@ -73,7 +73,7 @@
         android:hint="   Phone Number"
         android:paddingLeft="@dimen/_10sdp"
 
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
 
     <EditText

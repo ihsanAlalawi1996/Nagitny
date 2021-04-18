@@ -76,4 +76,9 @@ dependencies {
 
     //otp
     implementation 'com.github.aabhasr1:OtpView:v1.1.2-ktx'
+
+    //cardview
+    implementation "androidx.cardview:cardview:1.0.0"
+
+    compile 'org.fabiomsr:moneytextview:1.1.0'
 }

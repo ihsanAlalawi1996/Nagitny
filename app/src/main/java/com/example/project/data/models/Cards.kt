@@ -11,7 +11,10 @@ data class Cards(
     @PrimaryKey
     @ColumnInfo(name = "card_number")
     @SerializedName("card_number")
-    var card_number:Int,
+    var card_number:String,
+    @ColumnInfo(name = "card_holder")
+    @SerializedName("card_holder")
+    var card_holder:String,
     @ColumnInfo(name = "couplesId")
     @SerializedName("couplesId")
     var couplesId:Int,

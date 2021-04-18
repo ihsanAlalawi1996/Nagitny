@@ -17,12 +17,36 @@ fun Context.isOnline(): Boolean {
         false
     }
 }
+
 fun Activity.hideKeyboard() {
     val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     currentFocus?.let {
         inputMethodManager.hideSoftInputFromWindow(it.windowToken, 0)
     }
 }
+
 fun Log(tag: String, msg: String) {
     Log.d(tag, msg)
+}
+
+fun String.replaceNonstandardDigits(): String {
+    if (this.isEmpty()) {
+        return this
+    }
+    val builder = StringBuilder()
+    for (element in this) {
+        if (element.isNonstandardDigit()) {
+            val numericValue = Character.getNumericValue(element)
+            if (numericValue >= 0) {
+                builder.append(numericValue)
+            }
+        } else {
+            builder.append(element)
+        }
+    }
+    return builder.toString()
+}
+
+fun Char.isNonstandardDigit(): Boolean {
+    return Character.isDigit(this) && this !in '0'..'9'
 }
