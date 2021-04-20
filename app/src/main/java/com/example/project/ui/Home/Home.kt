@@ -1,24 +1,26 @@
 package com.example.project.ui.Home
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.example.project.R
 import com.example.project.common.App
+import com.example.project.ui.Home.Adapters.ItemsAdapter
 import com.example.project.ui.Home.Fragments.*
 import com.example.project.ui.Splash.SplashScreen
 import io.paperdb.Paper
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_home.profile_name
-import kotlinx.android.synthetic.main.profile.*
+import kotlinx.android.synthetic.main.item_design.*
+import kotlinx.android.synthetic.main.item_design.view.*
 
 class Home : AppCompatActivity() {
 
@@ -29,7 +31,7 @@ class Home : AppCompatActivity() {
         instance=this
          App.phone=Paper.book().read("mKey",0)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
+        Paper.book().write("profile",0)
         viewModel.setupAdapter(App.phone)
 
         setSupportActionBar(toolbar)
@@ -46,16 +48,14 @@ class Home : AppCompatActivity() {
 
 
 
-       var name = viewModel.changeProfileName(App.phone).toString()
+       var name = viewModel.getProfileName(App.phone).toString()
 
         profile_name.text=name
         header_name.setText(name)
 
 
         add_item.setOnClickListener {
-
             viewModel.addItem(R.id.home_activity, AddItemFragemnt())
-
 
         }
 
@@ -84,9 +84,10 @@ class Home : AppCompatActivity() {
                         frame_layout.visibility=View.VISIBLE
                     }
                 }
+
                 R.id.history ->{
                     supportFragmentManager.beginTransaction().apply {
-                        replace(R.id.frame_layout, HistoryFragment())
+                        replace(R.id.frame_layout, TransactionsFragment())
                         addToBackStack(null)
                         commit()
                         closeDrawer()
@@ -134,20 +135,27 @@ class Home : AppCompatActivity() {
 
     override fun onBackPressed() {
         frame_layout.visibility=View.GONE
-        Home.instance.add_item.visibility=View.VISIBLE
-        Home.instance.search_couples_button.visibility=View.VISIBLE
+        add_item.visibility=View.VISIBLE
+        search_couples_button.visibility=View.VISIBLE
         if (home_activity.isDrawerOpen(GravityCompat.START))
             closeDrawer()
         else
             super.onBackPressed()
+        Paper.book().delete("itemKey")
+
     }
     fun search(v:View){
-        viewModel.setupAdapter(search_couples.text.toString().toInt())
-
+        var searchedNum=search_couples.text.toString().toInt()
+        if (searchedNum!=App.phone) {
+            viewModel.setupAdapter(search_couples.text.toString().toInt())
+            Paper.book().write("profile", 1)
+        }
+        else
+            Toast.makeText(App.instance, "this is your own number ", Toast.LENGTH_SHORT).show()
     }
     fun home(v:View){
+        Paper.book().write("profile",0)
         viewModel.setupAdapter(App.phone)
-
     }
 
     companion object{

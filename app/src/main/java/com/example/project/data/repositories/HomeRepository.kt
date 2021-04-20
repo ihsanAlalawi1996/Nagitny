@@ -27,8 +27,8 @@ class HomeRepository {
         return DataBase.getDatabaseInstance(App.instance).BaseDao().insertInCards(card)
     }
 
-    fun addTransaction(history: History) {
-        return DataBase.getDatabaseInstance(App.instance).BaseDao().insertInHistory(history)
+    fun addTransaction(transaction: Transactions) {
+        return DataBase.getDatabaseInstance(App.instance).BaseDao().insertInHistory(transaction)
     }
 
     fun getAllItems(phone: Int): List<Items>? {
@@ -39,7 +39,7 @@ class HomeRepository {
         return DataBase.getDatabaseInstance(App.instance).BaseDao().getAllCards(phone)
 
     }
-    fun getAllTransactions(phone: Int): List<History> {
+    fun getAllTransactions(phone: Int): List<Transactions> {
         return DataBase.getDatabaseInstance(App.instance).BaseDao().getAllTransactions(phone)
 
     }
@@ -52,5 +52,10 @@ class HomeRepository {
 
     }
 
+    fun checkCVV(s: String, cardNumber: String): Boolean {
+        var cards=DataBase.getDatabaseInstance(App.instance).BaseDao().checkCVV(s.toInt(),cardNumber)
+        return cards?.card_pass!= null
+
+    }
 
 }

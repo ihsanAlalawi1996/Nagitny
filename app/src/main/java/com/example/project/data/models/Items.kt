@@ -25,6 +25,9 @@ data class Items (
     @ColumnInfo(name = "price")
     @SerializedName("price")
     var price:Double,
+    @ColumnInfo(name = "original_price")
+    @SerializedName("original_price")
+    var original_price:Double,
     @ColumnInfo(name = "address")
     @SerializedName("address")
     var address:String,

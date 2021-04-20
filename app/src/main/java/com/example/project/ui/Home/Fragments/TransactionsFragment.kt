@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.project.R
 import com.example.project.ui.Home.homeViewModel
 
-class HistoryFragment : Fragment() {
+class TransactionsFragment : Fragment() {
 
     companion object {
         lateinit var hView: View
@@ -17,7 +17,7 @@ class HistoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-         hView = inflater.inflate(R.layout.fragment_history, container, false)
+         hView = inflater.inflate(R.layout.fragment_transaction, container, false)
 
         homeViewModel.setupCardsTransactionsHistory()
         return hView

@@ -189,126 +189,126 @@
                     android:textSize="@dimen/_17sdp" />
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/update_card_form"
-                android:paddingTop="@dimen/_5sdp"
-                android:visibility="gone"
-                android:layout_width="@dimen/_245sdp"
-                android:layout_height="@dimen/_120sdp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_120sdp"
-                android:background="@drawable/rounded_gray">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/update_card_form"-->
+<!--                android:paddingTop="@dimen/_5sdp"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_width="@dimen/_245sdp"-->
+<!--                android:layout_height="@dimen/_120sdp"-->
+<!--                android:layout_alignParentLeft="true"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:layout_marginLeft="@dimen/_8sdp"-->
+<!--                android:layout_marginTop="@dimen/_120sdp"-->
+<!--                android:background="@drawable/rounded_gray">-->
 
-                <EditText
-                    android:id="@+id/update_credit_card_number"
-                    android:layout_width="@dimen/_200sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_17sdp"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    android:background="@drawable/rounded_corners_white"
-                    android:gravity="center_horizontal"
-                    android:hint="1234 1234 1234 1234"
-                    android:textSize="@dimen/_17sdp"
-                    android:inputType="number"
-                    android:maxLength="16"
-                    />
+<!--                <EditText-->
+<!--                    android:id="@+id/update_credit_card_number"-->
+<!--                    android:layout_width="@dimen/_200sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="@dimen/_17sdp"-->
+<!--                    android:layout_marginTop="@dimen/_7sdp"-->
+<!--                    android:background="@drawable/rounded_corners_white"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:hint="1234 1234 1234 1234"-->
+<!--                    android:textSize="@dimen/_17sdp"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLength="16"-->
+<!--                    />-->
 
-                <EditText
-                    android:id="@+id/update_holder_first_name"
-                    android:layout_width="@dimen/_154sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_17sdp"
-                    android:layout_marginTop="@dimen/_38sdp"
-                    android:background="@drawable/rounded_corners_white"
-                    android:gravity="center_horizontal"
-                    android:hint="Card Holder"
-                    android:textSize="@dimen/_17sdp"
-                    android:inputType="text"
-                    />
+<!--                <EditText-->
+<!--                    android:id="@+id/update_holder_first_name"-->
+<!--                    android:layout_width="@dimen/_154sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="@dimen/_17sdp"-->
+<!--                    android:layout_marginTop="@dimen/_38sdp"-->
+<!--                    android:background="@drawable/rounded_corners_white"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:hint="Card Holder"-->
+<!--                    android:textSize="@dimen/_17sdp"-->
+<!--                    android:inputType="text"-->
+<!--                    />-->
 
-                <EditText
-                    android:id="@+id/update_end_month"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_17sdp"
-                    android:layout_marginTop="@dimen/_67sdp"
-                    android:background="@drawable/rounded_corners_white"
-                    android:gravity="center_horizontal"
-                    android:hint=" mm "
-                    android:maxLength="2"
-                    android:textSize="@dimen/_17sdp"
-                    android:inputType="number"
+<!--                <EditText-->
+<!--                    android:id="@+id/update_end_month"-->
+<!--                    android:layout_width="@dimen/_40sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="@dimen/_17sdp"-->
+<!--                    android:layout_marginTop="@dimen/_67sdp"-->
+<!--                    android:background="@drawable/rounded_corners_white"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:hint=" mm "-->
+<!--                    android:maxLength="2"-->
+<!--                    android:textSize="@dimen/_17sdp"-->
+<!--                    android:inputType="number"-->
 
-                    />
-                <EditText
-                    android:id="@+id/update_card_code"
-                    android:layout_width="@dimen/_60sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_175sdp"
-                    android:layout_marginTop="@dimen/_38sdp"
-                    android:background="@drawable/rounded_corners_white"
-                    android:gravity="center_horizontal"
-                    android:hint="  CCV  "
-                    android:textSize="@dimen/_17sdp"
-                    android:inputType="number"
-                    android:maxLength="3"
-                    />
-                <EditText
-                    android:id="@+id/update_end_year"
-                    android:layout_width="@dimen/_40sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_74sdp"
-                    android:layout_marginTop="@dimen/_67sdp"
-                    android:background="@drawable/rounded_corners_white"
-                    android:gravity="center_horizontal"
-                    android:hint="  yy  "
-                    android:maxLength="2"
-                    android:textSize="@dimen/_17sdp"
-                    android:inputType="number"
+<!--                    />-->
+<!--                <EditText-->
+<!--                    android:id="@+id/update_card_code"-->
+<!--                    android:layout_width="@dimen/_60sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="@dimen/_175sdp"-->
+<!--                    android:layout_marginTop="@dimen/_38sdp"-->
+<!--                    android:background="@drawable/rounded_corners_white"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:hint="  CCV  "-->
+<!--                    android:textSize="@dimen/_17sdp"-->
+<!--                    android:inputType="number"-->
+<!--                    android:maxLength="3"-->
+<!--                    />-->
+<!--                <EditText-->
+<!--                    android:id="@+id/update_end_year"-->
+<!--                    android:layout_width="@dimen/_40sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="@dimen/_74sdp"-->
+<!--                    android:layout_marginTop="@dimen/_67sdp"-->
+<!--                    android:background="@drawable/rounded_corners_white"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:hint="  yy  "-->
+<!--                    android:maxLength="2"-->
+<!--                    android:textSize="@dimen/_17sdp"-->
+<!--                    android:inputType="number"-->
 
-                    />
+<!--                    />-->
 
-                <TextView
-                    android:id="@+id/epdate_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_62sdp"
-                    android:layout_marginTop="@dimen/_58sdp"
-                    android:text="/"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_30sdp"
-                    android:textStyle="bold"
-                    />
+<!--                <TextView-->
+<!--                    android:id="@+id/epdate_textView"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="@dimen/_62sdp"-->
+<!--                    android:layout_marginTop="@dimen/_58sdp"-->
+<!--                    android:text="/"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/_30sdp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    />-->
 
-                <Button
-                    android:id="@+id/update_card_button"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="@dimen/_140sdp"
-                    android:layout_marginTop="@dimen/_65sdp"
-                    android:inputType="text"
-                    android:text="Add"
-                    android:textSize="@dimen/_17sdp" />
-            </RelativeLayout>
+<!--                <Button-->
+<!--                    android:id="@+id/update_card_button"-->
+<!--                    android:layout_width="@dimen/_90sdp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentLeft="true"-->
+<!--                    android:layout_alignParentTop="true"-->
+<!--                    android:layout_marginLeft="@dimen/_140sdp"-->
+<!--                    android:layout_marginTop="@dimen/_65sdp"-->
+<!--                    android:inputType="text"-->
+<!--                    android:text="Add"-->
+<!--                    android:textSize="@dimen/_17sdp" />-->
+<!--            </RelativeLayout>-->
 
             <androidx.recyclerview.widget.RecyclerView
-
+                app:spanCount="2"
                 android:id="@+id/cards_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

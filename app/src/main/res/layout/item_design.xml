@@ -5,11 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_300sdp"
-    android:layout_marginTop="@dimen/_5sdp"
     android:background="@drawable/post_backgorund"
+    android:layout_marginRight="@dimen/_6sdp"
     >
 
     <androidx.appcompat.widget.AppCompatImageView
+
         android:id="@+id/item_status"
         android:layout_width="279dp"
         android:layout_height="223dp"
@@ -37,7 +38,8 @@
         android:background="@drawable/rounded_black_border"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/item_date"
@@ -53,17 +55,18 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/item_description"
-        android:layout_width="339dp"
+        android:layout_width="341dp"
         android:layout_height="48dp"
-        android:layout_marginTop="4dp"
+        android:background="@drawable/black_border"
+        android:gravity="center_horizontal"
         android:hint="description"
+        android:padding="@dimen/_5sdp"
         android:textColor="@color/black"
         android:textSize="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="@+id/item_name"
-        app:layout_constraintHorizontal_bias="0.625"
+        app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="@+id/item_date"
-        app:layout_constraintTop_toBottomOf="@+id/item_date"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/item_date" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/item_image"
@@ -79,8 +82,8 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/item_price"
-        android:layout_width="94dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginLeft="76dp"
         android:layout_marginTop="308dp"
@@ -89,7 +92,8 @@
         android:gravity="center_horizontal"
         android:text="70"
         android:textColor="@color/black"
-        android:textSize="@dimen/_20sdp"
+        android:textSize="@dimen/_18sdp"
+        android:padding="@dimen/_5sdp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -108,20 +112,20 @@
         app:layout_constraintTop_toTopOf="@+id/item_price" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView3"
-        android:layout_width="118dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="@dimen/_80sdp"
-        android:background="@drawable/round"
+        android:id="@+id/pay_button"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginLeft="@dimen/_210sdp"
+        android:layout_marginTop="316dp"
+        android:background="@drawable/rounded_gray"
         android:gravity="center_horizontal"
         android:inputType="text"
         android:text="Pay"
         android:textColor="@color/white"
         android:textSize="@dimen/_25sdp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/item_price"
-        app:layout_constraintTop_toTopOf="@+id/item_price" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"

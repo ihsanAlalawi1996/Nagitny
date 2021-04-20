@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.project.dao.BaseDao
 
 
-@Database(entities = [Users::class,Items::class,History::class,Cards::class],version= 1)
+@Database(entities = [Users::class,Items::class,Transactions::class,Cards::class],version= 2)
 
 abstract class DataBase: RoomDatabase() {
 

@@ -29,9 +29,9 @@ class CardsFragment : Fragment() {
     ): View? {
         cView = inflater.inflate(R.layout.fragment_cards, container, false)
         instance =this
+
         Home.viewModel.setupCardsAdapter()
-        Home.instance.add_item.visibility=View.GONE
-        Home.instance.search_couples_button.visibility=View.GONE
+
         cView.create_new_card.setOnClickListener {
             cView.card_form.visibility = View.VISIBLE
             cView.cards_recycler_view.visibility = View.GONE

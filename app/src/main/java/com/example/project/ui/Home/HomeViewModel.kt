@@ -1,8 +1,9 @@
 package com.example.project.ui.Home
 
+import android.view.View
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,21 +12,19 @@ import com.example.project.R
 import com.example.project.common.App
 import com.example.project.common.replaceNonstandardDigits
 import com.example.project.data.models.Cards
-import com.example.project.data.models.DataBase
-import com.example.project.data.models.History
 import com.example.project.data.models.Items
+import com.example.project.data.models.Transactions
 import com.example.project.data.repositories.HomeRepository
 import com.example.project.ui.Home.Adapters.CardsAdapter
-import com.example.project.ui.Home.Adapters.HistoryAdapter
+import com.example.project.ui.Home.Adapters.TransactionsAdapter
 import com.example.project.ui.Home.Adapters.ItemsAdapter
-import com.example.project.ui.Home.Fragments.AddItemFragemnt
-import com.example.project.ui.Home.Fragments.CardsFragment
-import com.example.project.ui.Home.Fragments.HistoryFragment
+import com.example.project.ui.Home.Fragments.*
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.add_item_view.view.*
 import kotlinx.android.synthetic.main.fragment_cards.view.*
-import kotlinx.android.synthetic.main.fragment_history.view.*
+import kotlinx.android.synthetic.main.fragment_payment.view.*
+import kotlinx.android.synthetic.main.fragment_transaction.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -39,14 +38,21 @@ val homeViewModel: HomeViewModel by lazy {
 class HomeViewModel : BaseViewModel() {
 
     val repository = HomeRepository()
-    val items = MutableLiveData<Items>()
-
 
     fun addItem(holderFragment: Int, desFragemnt: Fragment) {
         Home.instance.supportFragmentManager.beginTransaction().apply {
             replace(holderFragment, desFragemnt)
             addToBackStack(null)
             commit()
+        }
+    }
+
+    fun openPaymentWindow(homeActivity: Int, paymentFragment: PaymentFragment) {
+        Home.instance.supportFragmentManager.beginTransaction().apply {
+            replace(R.id.frame_layout, paymentFragment)
+            addToBackStack(null)
+            commit()
+            Home.instance.frame_layout.visibility = View.VISIBLE
         }
     }
 
@@ -57,18 +63,22 @@ class HomeViewModel : BaseViewModel() {
             "none",
             name,
             price,
+            price,
             address,
             importance,
             "unpaid",
             0.0,
             SimpleDateFormat("dd-MM-YYYY hh:mm").format(Date()).replaceNonstandardDigits()
         )
-        setupAdapter(App.phone)
-
         return repository.addItemtoDB(newItem)
     }
+    fun updateItem(item: Items) {
+        item.date=SimpleDateFormat("dd-MM-YYYY hh:mm").format(Date()).replaceNonstandardDigits()
 
-    fun changeProfileName(phone: Int): String? {
+        return repository.addItemtoDB(item)
+    }
+
+    fun getProfileName(phone: Int): String? {
 
         return repository.getProfileName(phone)
 
@@ -100,9 +110,8 @@ class HomeViewModel : BaseViewModel() {
         setupCardsAdapter()
     }
 
-    fun addTransaction(history: History) {
+    fun addTransaction(history: Transactions) {
         repository.addTransaction(history)
-        setupCardsAdapter()
     }
 
     fun getAllItems(phone: Int): List<Items>? {
@@ -113,7 +122,7 @@ class HomeViewModel : BaseViewModel() {
         return repository.getAllCards(phone)
     }
 
-    fun getAllTransactions(phone: Int): List<History> {
+    fun getAllTransactions(phone: Int): List<Transactions> {
         return repository.getAllTransactions(phone)
 
     }
@@ -122,11 +131,13 @@ class HomeViewModel : BaseViewModel() {
         var model = getAllItems(phone)
 
         Home.instance.recycler_view.layoutManager =
-            LinearLayoutManager(App.instance, RecyclerView.VERTICAL, false)
+            LinearLayoutManager(App.instance, RecyclerView.HORIZONTAL, false)
+        Home.instance.recycler_view.isNestedScrollingEnabled
+
         var costumeAdopter = ItemsAdapter(model)
         Home.instance.recycler_view.adapter = costumeAdopter
-        Home.instance.profile_name.text = changeProfileName(phone)
-        if (phone == 1111)
+        Home.instance.profile_name.text = getProfileName(phone)
+        if (phone == 1111)                                          // changed user photo manually
             Home.instance.circleImageView.setImageDrawable(
                 ContextCompat.getDrawable(
                     App.instance,
@@ -137,9 +148,10 @@ class HomeViewModel : BaseViewModel() {
             Home.instance.circleImageView.setImageDrawable(
                 ContextCompat.getDrawable(
                     App.instance,
-                    R.drawable.ramiz
+                    R.drawable.ramiz2
                 )
             )
+
     }
 
     fun setupCardsAdapter() {
@@ -151,14 +163,23 @@ class HomeViewModel : BaseViewModel() {
         CardsFragment.cView.cards_recycler_view.adapter = costumeAdopter
 
     }
+    fun setupPaymentCardsAdapter() {
+        var model = getAllCards(App.phone)
+
+        PaymentFragment.cardView.payment_recycler_view.layoutManager =
+            LinearLayoutManager(App.instance, RecyclerView.HORIZONTAL, false)
+        var costumeAdopter = CardsAdapter(model)
+        PaymentFragment.cardView.payment_recycler_view.adapter = costumeAdopter
+
+    }
 
     fun setupCardsTransactionsHistory() {
         var model = getAllTransactions(App.phone)
 
-        HistoryFragment.hView.history_recycler_view.layoutManager =
+        TransactionsFragment.hView.history_recycler_view.layoutManager =
             LinearLayoutManager(App.instance, RecyclerView.VERTICAL, false)
-        var costumeAdopter = HistoryAdapter(model)
-        HistoryFragment.hView.history_recycler_view.adapter = costumeAdopter
+        var costumeAdopter = TransactionsAdapter(model)
+        TransactionsFragment.hView.history_recycler_view.adapter = costumeAdopter
 
     }
     fun deleteCard(cardNumber: String?) {
@@ -170,6 +191,16 @@ class HomeViewModel : BaseViewModel() {
         repository.deleteItem(itemId)
         setupAdapter(App.phone)
     }
+
+    fun checkCVV(s: String, cardNumber: String): Boolean {
+        return repository.checkCVV(s,cardNumber)
+    }
+
+    fun makePaymentOnItem(itemModel: Items) {
+        repository.addItemtoDB(itemModel)
+    }
+
+
 
 }
 

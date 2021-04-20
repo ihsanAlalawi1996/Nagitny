@@ -24,7 +24,7 @@ class ProfileFragment:Fragment(){
 
 
 
-        pView.profile_name.text = Home.viewModel.changeProfileName(App.phone).toString()
+        pView.profile_name.text = Home.viewModel.getProfileName(App.phone).toString()
 
         pView.profile_phone_number.text = App.phone.toString()
 

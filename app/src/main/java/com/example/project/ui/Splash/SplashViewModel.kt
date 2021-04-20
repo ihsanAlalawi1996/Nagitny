@@ -19,7 +19,7 @@ val viewModel: SplashViewModel by lazy {
         SplashViewModel::class.java
     )
 }     // lazy only initializes the variable when its used
-lateinit var rView :View
+lateinit var rView: View
 
 class SplashViewModel : BaseViewModel() {
 
@@ -27,10 +27,15 @@ class SplashViewModel : BaseViewModel() {
     val users = MutableLiveData<Users>()
 
     fun createNewUserbyVM() {
-        rView=RegisterFragment.rView
-        if (!(rView.nameField.text.toString().length > 0 &&                           //checks if all feilds are entered
-                    rView.passFeild.text.toString().length > 0 &&
-                    rView.phoneField.text.toString().length > 0)
+        rView = RegisterFragment.rView
+        var name = rView.nameField.text.toString()
+        var pass = rView.passFeild.text.toString()
+        var phone = rView.phoneField.text.toString()
+
+
+        if (!(name.length > 0 &&                           //checks if all fields are entered
+                    pass.length > 0 &&
+                    phone.length > 0)
         )
             Toast.makeText(App.instance, "please fill out the fields first", Toast.LENGTH_SHORT)
                 .show()
@@ -42,23 +47,38 @@ class SplashViewModel : BaseViewModel() {
                     Toast.LENGTH_SHORT
                 ).show()
             else {
-                if (rView.confirm_field.text.toString() == rView.passFeild.text.toString()) {
-                    var userinfo =
-                        Users(                                        // puts the info entered inside the data model
-                            rView.nameField.text.toString(),
-                            rView.passFeild.text.toString(),
-                            rView.phoneField.text.toString().toInt(), ""
-                        )
-                    repository.registerNewUser(userinfo)
-                    Toast.makeText(App.instance, "account created", Toast.LENGTH_SHORT).show()
-                    switchFragemnt(R.id.splash_activity, PhoneAuthFragment())
-                } else {
+                if (rView.confirm_field.text.toString() != pass) {   // checks if 2 passwords match each other
                     Toast.makeText(
                         App.instance,
                         "passwords do not match",
                         Toast.LENGTH_SHORT
                     ).show()
-
+                } else {
+                    if (pass.length < 6)                         // checks if pass length is greater than 5
+                        Toast.makeText(
+                            App.instance,
+                            "password must have at least 6 Characters ",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    else
+                        if (phone.length < 10 || phone[0] != '0' || phone[1] != '7')                         // checks if pass length is greater than 5
+                            Toast.makeText(
+                                App.instance,
+                                "phone number does not match the format ",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        else {
+                            var userinfo =
+                                Users(                                        // puts the info entered inside the data model
+                                    name,
+                                    pass,
+                                    phone.toInt(), ""
+                                )
+                            repository.registerNewUser(userinfo)
+                            Toast.makeText(App.instance, "account created\nauthenticate to login", Toast.LENGTH_LONG)
+                                .show()
+                            switchFragemnt(R.id.splash_activity, PhoneAuthFragment())
+                        }
                 }
             }
 
@@ -70,7 +90,7 @@ class SplashViewModel : BaseViewModel() {
         if (repository.checkInfo(phone, pass)) {
             return true
         } else {
-            Toast.makeText(App.instance, "user does not exist", Toast.LENGTH_SHORT).show()
+            Toast.makeText(App.instance, "user or password does not match", Toast.LENGTH_SHORT).show()
             return false
         }
     }

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:id="@+id/card_design"
     >
 
 
@@ -32,7 +33,7 @@
             android:layout_marginLeft="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_50sdp"
             android:elevation="@dimen/_1sdp"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="sans-serif-condensed-medium"
             android:text="EXP:"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -46,11 +47,13 @@
             android:layout_marginLeft="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_25sdp"
             android:elevation="@dimen/_1sdp"
-            android:fontFamily="serif-monospace"
-            android:text="CARD HOLDER"
-            android:textSize="@dimen/_12sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Card holder"
+            android:textSize="@dimen/_9sdp"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            />
 
         <ImageView
             android:id="@+id/delete_card"

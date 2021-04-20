@@ -5,22 +5,53 @@
     android:id="@+id/home_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Home.Home">
+    tools:context=".ui.Home.Home"
+
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/main_menu">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_53sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <EditText
+                android:id="@+id/search_couples"
+                android:layout_width="267dp"
+                android:layout_height="37dp"
+                android:background="@drawable/round_search"
+                android:drawableLeft="@drawable/search_icon"
+                android:hint=" Enter Couples number"
+                android:inputType="number"
+                android:shadowColor="#000000"
+                android:maxLength="10"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/search_couples_button"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginLeft="-40dp"
+                android:background="@drawable/ic_baseline_refresh_24"
+                android:elevation="1dp"
+                android:onClick="search" />
+        </LinearLayout>
+
         <ImageView
+            android:id="@+id/imageView"
             android:layout_width="@dimen/_40sdp"
             android:layout_height="@dimen/_40sdp"
             android:layout_marginStart="176dp"
             android:layout_marginLeft="176dp"
-            android:layout_marginTop="73dp"
+            android:layout_marginTop="84dp"
             android:background="@drawable/home_icon"
             android:onClick="home"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
@@ -37,12 +68,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_66sdp"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_1sdp"
             android:background="@drawable/roundbutton"
             android:drawableRight="@drawable/right_add"
             android:inputType="text"
             android:padding="@dimen/_5sdp"
-            android:text="Add Item   "
+            android:text=" Add Item   "
             android:textColor="@color/white"
             android:textSize="@dimen/_16sdp"
             android:textStyle="bold"
@@ -54,62 +85,62 @@
             android:id="@+id/circleImageView"
             android:layout_width="144dp"
             android:layout_height="110dp"
-            android:layout_marginStart="132dp"
-            android:layout_marginLeft="132dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="128dp"
+            android:layout_marginLeft="128dp"
+            android:layout_marginTop="180dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_couples" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-
-            android:id="@+id/search_couples"
-            android:layout_width="267dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="120dp"
-            android:background="@drawable/round_search"
-            android:drawableLeft="@drawable/search_icon"
-            android:ems="10"
-            android:hint=" Enter Couples number"
-            android:inputType="textPersonName"
-            android:shadowColor="#000000"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/profile_name"
             android:layout_width="322dp"
             android:layout_height="38dp"
             android:layout_marginStart="44dp"
             android:layout_marginLeft="44dp"
-            android:layout_marginTop="4dp"
             android:gravity="center"
             android:inputType="text"
             android:text="Ihsan Alalawi"
             android:textColor="#000000"
             android:textSize="@dimen/_25sdp"
             android:textStyle="bold"
+            android:shadowColor="@color/black"
+            android:shadowRadius="40"
+            android:shadowDy="59"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/circleImageView"
 
             />
 
-        <androidx.recyclerview.widget.RecyclerView
-
-            android:id="@+id/recycler_view"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
-            android:background="@color/grey"
-            android:padding="@dimen/_5sdp"
+            android:layout_marginTop="370dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
 
-        </androidx.recyclerview.widget.RecyclerView>
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    android:padding="@dimen/_5sdp"
+                    app:spanCount="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
 
         <FrameLayout
+
             android:id="@+id/frame_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -125,18 +156,6 @@
                 android:background="@drawable/seethrough"
                 android:elevation="@dimen/_2sdp" />
         </FrameLayout>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/search_couples_button"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
-            android:layout_marginStart="284dp"
-            android:layout_marginLeft="284dp"
-            android:layout_marginTop="64dp"
-            android:background="@drawable/ic_baseline_refresh_24"
-            android:onClick="search"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

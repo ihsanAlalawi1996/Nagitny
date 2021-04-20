@@ -70,9 +70,9 @@
         android:layout_marginTop="335dp"
         android:background="@drawable/round_search"
         android:ems="10"
-        android:hint="   Phone Number"
+        android:hint="Phone Number"
         android:paddingLeft="@dimen/_10sdp"
-
+        android:maxLength="10"
         android:inputType="number" />
 
 

@@ -137,7 +137,7 @@
             android:layout_marginTop="@dimen/_3sdp">
 
             <EditText
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:id="@+id/item_price_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,6 +214,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Switch
+
                 android:id="@+id/switch1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
